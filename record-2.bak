@@ -1,0 +1,41 @@
+PROGRAM DATABASE;
+Uses crt;
+TYPE mahasiswa=record
+               nama: string;
+               nim:  string;
+               alamat:  string;
+               ipk:  real;
+               end;
+VAR data1:array[1..20] of mahasiswa;i,n:integer;
+begin
+clrscr;
+write(' Banyak mahasiswa : ');readln(n);
+for i:=1 to n do
+ begin
+ writeln(' Data mahasiswa ',i,' :' );
+ write(' a. Nama   : ');readln(data1[i].nama);
+ write(' b. NIM    : ');readln(data1[i].nim);
+ write(' c. Alamat : ');readln(data1[i].alamat);
+ write(' d. IPK    : ');readln(data1[i].IPK);
+ end;
+clrscr;
+writeln(' DATA MAHASISWA ');
+writeln(' ===============');
+writeln('|  NO |    NAMA      |    NIM   |  ALAMAT   | IPK |');
+Writeln('----------------------------------------------------');
+for i:=1 to n do
+  writeln('|',i:4,'|', data1[i].nama:14,'|',data1[i].nim:10,'|'
+  ,data1[i].alamat:10,'|',data1[i].IPK:4:2,'|');
+  readln;
+  clrscr;
+  writeln(' Output using with ... do');
+writeln('|  NO |    NAMA      |    NIM   |  ALAMAT   | IPK |');
+Writeln('----------------------------------------------------');
+
+for i:=1 to n do
+ begin
+ with data1[i] do
+  writeln('|',i:4,'|', nama:14,'|',nim:10,'|' ,alamat:10,'|',IPK:4:2,'|');
+end;
+readln;
+end.

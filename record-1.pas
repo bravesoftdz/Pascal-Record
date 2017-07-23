@@ -1,0 +1,26 @@
+program record1;
+uses crt;
+TYPE mahasiswa=record
+               nama: string;
+               nim:  string;
+               alamat: string;
+               ipk: real;
+             end;
+
+VAR data1: mahasiswa;
+begin
+clrscr;
+data1.nama:='Aku';
+data1.nim:='A1601';
+data1.alamat:='Ah taulah';
+data1.IPK:=3.56;
+writeln('Nama ',data1.nama);
+writeln('Nim ',data1.nim);
+writeln('Output using with do');
+with data1 do
+begin
+writeln('Nama : ',nama);
+writeln('Nim : ',nim);
+end;
+readln;
+end.
